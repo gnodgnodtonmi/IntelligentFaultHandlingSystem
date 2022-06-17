@@ -1,7 +1,4 @@
 from app.dbs import db
-from flask_migrate import Migrate
-
-migrate = Migrate(db)
 
 
 # 车主与车辆信息表
@@ -46,14 +43,14 @@ class Solution(db.Model):
 # 方案步骤表
 class Step(db.Model):
     __tablename__ = "step"
-    step_id = db.Column(db.Integer, promary_key=True, autoincrement=True)
+    step_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     content = db.Column(db.String(128), nullable=False)
 
 
 # 方案图片表
 class Pictures(db.Model):
     __tablename__ = "picture"
-    picture_id = db.Column(db.Integer, promary_key=True, autoincrement=True)
+    picture_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     picture_path = db.Column(db.String(128), nullable=False)
 
 
