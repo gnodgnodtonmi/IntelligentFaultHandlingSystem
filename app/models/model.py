@@ -59,4 +59,3 @@ class CommonFault(db.Model):
     __tablename__ = "common_fault"
     common_fault_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     common_fault_name = db.Column(db.String(30), db.ForeignKey("cell_fault.fault_id"))
-    common_fault_solution = db.Column(db.Integer, db.ForeignKey("solution.solution_id"), nullable=True)
