@@ -1,4 +1,4 @@
-from dbs import db
+from app.dbs import db
 
 
 class Car(db.Model):
