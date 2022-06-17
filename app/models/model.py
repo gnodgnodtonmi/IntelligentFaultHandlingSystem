@@ -58,4 +58,4 @@ class Pictures(db.Model):
 class CommonFault(db.Model):
     __tablename__ = "common_fault"
     common_fault_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    common_fault_name = db.Column(db.String(30), db.ForeignKey("cell_fault.fault_id"))
+    cell_fault = db.Column(db.Integer, db.ForeignKey("cell_fault.fault_id"))
