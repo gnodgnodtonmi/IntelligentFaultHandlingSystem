@@ -6,7 +6,7 @@ class User(db.Model):
     __tablename__ = "user"
     user_id = db.Column(db.String(30), primary_key=True, nullable=False)
     car_id = db.Column(db.Integer, autoincrement=True)
-    car_type = db.Column(db.String(10), mullable=False)
+    car_type = db.Column(db.String(10), nullable=False)
 
 
 # 将故障分为三级
