@@ -19,7 +19,7 @@ def get_all_system_faults():
     return jsonify(res)
 
 
-@fault_bp.route('/getStructureFaultById')
+@fault_bp.route('/getStructureFaultById', methods=['GET'])
 def get_structure_fault_by_id():
     system_fault_id = request.args.get('faultId')
     if system_fault_id is None:
