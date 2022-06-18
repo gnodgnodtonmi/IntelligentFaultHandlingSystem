@@ -27,6 +27,7 @@ class CellFault(db.Model):
     __tablename__ = "cell_fault"
     fault_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     fault_name = db.Column(db.String(30), nullable=False)
+
     parent_fault = db.Column(db.Integer, db.ForeignKey("structure_fault.fault_id"))
     solution = db.Column(db.Integer, db.ForeignKey("solution.solution_id"), nullable=True)
 

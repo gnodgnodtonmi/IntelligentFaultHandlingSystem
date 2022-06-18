@@ -14,5 +14,5 @@ def get_car_type_id():
                         'data': {'user_id': user.user_id,
                                  'car_type': user.car_type}})
     else:
-        return jsonify({'msg': 'fail',
+        return jsonify({'msg': 'failure',
                         'data': {}})
