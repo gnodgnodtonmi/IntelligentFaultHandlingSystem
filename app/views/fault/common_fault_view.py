@@ -8,6 +8,7 @@ from app.models.model import CommonFault, CellFault
 def get_common_fault():
     common_faults = CommonFault.query.all()
     res = {'data': []}
+
     for comm_ft in common_faults:
         common_fault_id = comm_ft.common_fault_id
         cell_fault_id = comm_ft.cell_fault
