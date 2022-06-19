@@ -41,7 +41,6 @@ class Solution(db.Model):
     solution_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     title = db.Column(db.String(60), nullable=False)
     step = db.Column(db.String(128), nullable=True)
-    picture = db.Column(db.String(128), nullable=True)
 
 
 # 方案步骤表
@@ -49,6 +48,7 @@ class Step(db.Model):
     __tablename__ = "step"
     step_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     content = db.Column(db.String(128), nullable=False)
+    picture_id = db.Column(db.Integer, db.ForeignKey("picture.picture_id"), nullable=True)
 
 
 # 方案图片表
