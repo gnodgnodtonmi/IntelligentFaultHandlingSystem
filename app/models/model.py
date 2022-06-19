@@ -4,7 +4,7 @@ from app.dbs import db
 # 车主与车辆信息表
 class User(db.Model):
     __tablename__ = "user"
-    user_id = db.Column(db.String(30), primary_key=True, nullable=False)
+    user_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     car_id = db.Column(db.Integer, autoincrement=True)
     car_type = db.Column(db.String(10), nullable=False)
 
@@ -14,6 +14,7 @@ class SystemFault(db.Model):
     __tablename__ = "system_fault"
     fault_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     fault_name = db.Column(db.String(30), nullable=False)
+    fault_type = db.Column(db.String(30), default="SystemFault")
 
 
 class StructureFault(db.Model):
@@ -21,6 +22,7 @@ class StructureFault(db.Model):
     fault_id = db.Column(db.Integer, primary_key=True)
     fault_name = db.Column(db.String(30), nullable=False)
     parent_fault = db.Column(db.Integer, db.ForeignKey("system_fault.fault_id"))
+    fault_type = db.Column(db.String(30), default="StructureFault")
 
 
 class CellFault(db.Model):
@@ -30,6 +32,7 @@ class CellFault(db.Model):
 
     parent_fault = db.Column(db.Integer, db.ForeignKey("structure_fault.fault_id"))
     solution = db.Column(db.Integer, db.ForeignKey("solution.solution_id"), nullable=True)
+    fault_type = db.Column(db.String(30), default="CellFault")
 
 
 # 解决方案表
