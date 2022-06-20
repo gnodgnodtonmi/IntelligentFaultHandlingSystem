@@ -12,8 +12,10 @@ def get_all_system_faults():
     for sf in system_faults:
         fault_id = sf.fault_id
         fault_name = sf.fault_name
+        fault_type = sf.fault_type
         data = {'fault_id': fault_id,
-                'fault_name': fault_name}
+                'fault_name': fault_name,
+                'fault_type': fault_type}
         res['system_fault_list'].append(data)
 
     return jsonify(res)
@@ -39,8 +41,10 @@ def get_structure_fault_by_id():
     for struct_fault in struct_faults:
         struct_fault_id = struct_fault.fault_id
         struct_fault_name = struct_fault.fault_name
+        struct_fault_type = struct_fault.fault_type
         data = {'fault_id': struct_fault_id,
-                'fault_name': struct_fault_name}
+                'fault_name': struct_fault_name,
+                'fault_type': struct_fault_type}
         res['struct_fault_list'].append(data)
 
     return jsonify(res)
@@ -66,8 +70,10 @@ def get_cell_fault_by_id():
     for cell_fault in cell_faults:
         cell_fault_id = cell_fault.fault_id
         cell_fault_name = cell_fault.fault_name
+        cell_fault_type = cell_fault.fault_type
         data = {'fault_id': cell_fault_id,
-                'fault_name': cell_fault_name}
+                'fault_name': cell_fault_name,
+                'fault_type': cell_fault_type}
         res['cell_fault_list'].append(data)
 
     return jsonify(res)
