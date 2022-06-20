@@ -54,7 +54,7 @@ def get_cell_fault_by_id():
 
     struct_faults = StructureFault.query.filter_by(fault_id=struct_fault_id).all()
     if len(struct_faults) == 0:
-        return jsonify({'msg': f'Can not found the SystemFault(faultId={struct_fault_id})'})
+        return jsonify({'msg': f'Can not found the StructFault(faultId={struct_fault_id})'})
     struct_fault = struct_faults[0]
 
     struct_fault_name = struct_fault.fault_name
