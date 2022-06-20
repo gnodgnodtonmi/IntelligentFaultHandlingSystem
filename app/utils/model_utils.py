@@ -29,7 +29,7 @@ def text_semantic_matching(key_sentence: str,
     query_tensor = torch.tensor(query_encode)
 
     cos_sim = cosine_similarity(key_tensor, query_tensor)
-    match_index = cos_sim.argmax()
+    match_index = cos_sim.argmax().item()
     match_text = query_sentence_list[match_index]
 
     res = {'match_index': match_index,
