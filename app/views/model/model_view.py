@@ -18,7 +18,7 @@ def extract_fault():
 
 
 @model_bp.route('/autoLocateFault', methods=['GET'])
-def AutoLocateFault():
+def auto_locate_fault():
     sentence = request.args.get('sentence')
     event_res = extract_fault_event(sentence=sentence)
 
